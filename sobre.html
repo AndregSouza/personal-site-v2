@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title>André Souza</title>
+</head>
+<body>
+  <script type="text/javascript">
+      $(function(){
+      var header = $('#menuHeader');
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 150) {
+          header.addClass("menu-fixo");
+        } else {
+          header.removeClass("menu-fixo");
+        }
+      });
+    });
+  </script>
+
+  <header id="menuHeader">
+    <a href="index.html"> <img src="images/Logo_Com_Quadrado.png" alt="Logo André Souza Design"> </a>
+    <nav>
+      <ul>
+        <li> <a href="index.html"> Projetos </a> </li>
+        <li> <a href="sobre.html"> Sobre e Contato </a> </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <p>Habilidades</p>
+    <div class="container">
+      <div>
+        <img src="images/icons/devices_icon.png" alt="">
+        <ul>
+          <li> UX / UI </li>
+          <li> Estratégia e Metodologia  </li>
+          <li> Pesquisa com usuário </li>
+          <li> Iteração </li>
+        </ul>
+      </div>
+
+      <div>
+        <img src="images/icons/code_icon.png" alt="">
+        <ul>
+          <li> Front-End </li>
+          <li> HTML, CSS e JavaScript </li>
+          <li> Código Limpo </li>
+          <li> Prototipagem </li>
+        </ul>
+      </div>
+
+      <div>
+        <img src="images/icons/3d_icon.png" alt="">
+        <ul>
+          <li> 3D </li>
+          <li> Modelagem </li>
+          <li> Ambientes Imersivos </li>
+          <li> Visualização de Produtos </li>
+        </ul>
+      </div>
+
+      <div>
+        <img src="images/icons/motion_icon.png" alt="">
+        <ul>
+          <li> Motion </li>
+          <li> Animação Fluida </li>
+          <li> Impacto Visual </li>
+          <li> Efeitos especiais </li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="heading-text"> Sobre mim </p>
+    <p class="about">
+      Sou André Gomes de Souza – UI, UX e Visual Designer do Brasil. <br>
+      <br>
+      Comecei a estudar Design em 2014 pela Saga – School of Art Game and Animation, onde aprendi
+      as melhores técnicas de tratamento de imagens, criação de efeitos visuais tanto em fotos
+      como para filmes, animações em 2D e modelagem 3D. <br>
+      <br>
+      No momento, curso Design Digital pelo Centro Universitário Senac, com o objetivo de aprimorar
+      meus conhecimentos em áreas como análise de interfaces, design de serviços e produtos interativos
+      com foco específico em seu uso e na experiência do usuário. <br>
+      <br>
+      Atualmente disponível para trabalho.
+    </p>
+
+    <a href="pdf/Andre_Souza_CV.pdf" target="_blank">
+      <button type="button" name="button"> Baixar Currículo </button>
+    </a>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p> Contato </p>
+      <ul>
+        <li> <a href="mailto:andregsouzaweb@gmail.com"> <img src="images/icons/mail_icon.png" alt=""> </a> </li>
+        <li> <a href="https://www.linkedin.com/in/andregsouza/" target="_blank"> <img src="images/icons/linkedin_icon.png" alt=""> </a> </li>
+        <li> <a href="https://www.behance.net/andregsouza" target="_blank"> <img src="images/icons/behance_icon.png" alt=""> </a> </li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
