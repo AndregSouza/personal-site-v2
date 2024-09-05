@@ -1,0 +1,208 @@
+@font-face {
+    font-family: 'AktivGrotesk';
+    src: url('AktivGrotesk-BoldItalic.woff2') format('woff2'),
+        url('AktivGrotesk-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AktivGrotesk-HairlineItalic';
+    src: url('AktivGrotesk-HairlineItalic.woff2') format('woff2'),
+        url('AktivGrotesk-HairlineItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AktivGrotesk';
+    src: url('AktivGrotesk-Bold.woff2') format('woff2'),
+        url('AktivGrotesk-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AktivGrotesk';
+    src: url('AktivGrotesk-BlackItalic.woff2') format('woff2'),
+        url('AktivGrotesk-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AktivGrotesk';
+    src: url('AktivGrotesk-Black.woff2') format('woff2'),
+        url('AktivGrotesk-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AktivGrotesk';
+    src: url('AktivGrotesk-MediumItalic.woff2') format('woff2'),
+        url('AktivGrotesk-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AktivGrotesk';
+    src: url('AktivGrotesk-Light.woff2') format('woff2'),
+        url('AktivGrotesk-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AktivGrotesk';
+    src: url('AktivGrotesk-Thin.woff2') format('woff2'),
+        url('AktivGrotesk-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AktivGrotesk';
+    src: url('AktivGrotesk-ThinItalic.woff2') format('woff2'),
+        url('AktivGrotesk-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AktivGrotesk-XBold';
+    src: url('AktivGrotesk-XBold.woff2') format('woff2'),
+        url('AktivGrotesk-XBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AktivGrotesk';
+    src: url('AktivGrotesk-Regular.woff2') format('woff2'),
+        url('AktivGrotesk-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AktivGrotesk-XBoldItalic';
+    src: url('AktivGrotesk-XBoldItalic.woff2') format('woff2'),
+        url('AktivGrotesk-XBoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AktivGrotesk';
+    src: url('AktivGrotesk-Medium.woff2') format('woff2'),
+        url('AktivGrotesk-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AktivGrotesk';
+    src: url('AktivGrotesk-Italic.woff2') format('woff2'),
+        url('AktivGrotesk-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AktivGrotesk-Hairline';
+    src: url('AktivGrotesk-Hairline.woff2') format('woff2'),
+        url('AktivGrotesk-Hairline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AktivGrotesk';
+    src: url('AktivGrotesk-LightItalic.woff2') format('woff2'),
+        url('AktivGrotesk-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'GTSectraFine';
+    src: url('GTSectraFine-Black.woff2') format('woff2'),
+        url('GTSectraFine-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GTSectraFine-RegularItalic';
+    src: url('GTSectraFine-RegularItalic.woff2') format('woff2'),
+        url('GTSectraFine-RegularItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'GTSectraFine';
+    src: url('GTSectraFine-Medium.woff2') format('woff2'),
+        url('GTSectraFine-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GTSectraFine';
+    src: url('GTSectraFine-MediumItalic.woff2') format('woff2'),
+        url('GTSectraFine-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'GTSectraFine';
+    src: url('GTSectraFine-Regular.woff2') format('woff2'),
+        url('GTSectraFine-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GTSectraFine';
+    src: url('GTSectraFine-BlackItalic.woff2') format('woff2'),
+        url('GTSectraFine-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'GTSectraFine-Book';
+    src: url('GTSectraFine-Book.woff2') format('woff2'),
+        url('GTSectraFine-Book.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GTSectraFine-BookItalic';
+    src: url('GTSectraFine-BookItalic.woff2') format('woff2'),
+        url('GTSectraFine-BookItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'GTSectraFineBold';
+    src: url('GTSectraFineBold-Italic.woff2') format('woff2'),
+        url('GTSectraFineBold-Italic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'GTSectraFine';
+    src: url('GTSectraFine-Bold.woff2') format('woff2'),
+        url('GTSectraFine-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+

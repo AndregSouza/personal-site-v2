@@ -1,55 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <title>André Souza</title>
-  </head>
-  <body>
-    <script type="text/javascript">
-        $(function(){
-        var header = $('#menuHeader');
-        $(window).scroll(function () {
-          if ($(this).scrollTop() > 180) {
-            header.addClass("menu-fixo");
-          } else {
-            header.removeClass("menu-fixo");
-          }
-        });
-      });
-    </script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.jpg">
+  <link rel="stylesheet" href="style/normalize.css">
+  <link rel="stylesheet" href="style/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+  <script src="js/stylechange.js"></script>
+  <title>André Souza</title>
+</head>
 
+<body>
+<!--  <div class="mask js-mask" style="animation: statechange 3.7s">
+    <div class="mask__slice" style="animation: fadeIn 1.2s; animation-delay: 2.5s; animation-timing-function: ease-out;">
+    </div>
+    <div class="mask__slice" style="animation: fadeIn 1.2s; animation-delay: 2.5s; animation-timing-function: ease-in-out;">
+    </div>
+    <div class="mask__slice" style="animation: fadeIn 1.2s; animation-delay: 2.5s; animation-timing-function: ease-in;">
+    </div>
+    <div class="mask__inner">
+      <figure class="logo logo--mask" >
+        <img src="images/teste.png" alt="" class="js-logo" style="animation: nameIn 2.3s; animation-timing-function: ease-in-out;">
+      </figure>
+      <div class="mask-line" style="animation: underline-appear 2s;" >
+        <div class="mask-line__inner" style="animation: line-appear 2s; animation-delay: 1s;">
+        </div>
+      </div>
+    </div>
 
-    <header id="menuHeader">
-      <a href="index.html"> <img src="images/Logo_Com_Quadrado.png" alt="Logo André Souza Design"> </a>
-      <nav >
-        <ul>
-          <li> <a href="index.html"> Projetos </a> </li>
-          <li> <a href="sobre.html"> Sobre e Contato </a> </li>
-        </ul>
+  </div> -->
+    <header>
+      <a href="index.html"> André Souza </a>
+      <nav>
+        <a href="sobre.html"> Sobre mim</a>
       </nav>
     </header>
 
-    <section>
-        <h1> Projetos de André Souza </h1>
-        <h2> UI, UX &#38; Visual Designer </h2>
-        <a href="https://www.behance.net/gallery/58510077/Entrelinhas-Virtuais" target="_blank"> <img src="images/fakenews.png" alt="projeto 1"> </a>
-        <a href="https://www.behance.net/gallery/54485021/Andr-Souza-Personal-Branding" target="_blank"> <img src="images/branding.png" alt="projeto 1"> </a>
-        <a href="https://www.behance.net/gallery/48627035/Projeto-Payphone" target="_blank"> <img src="images/payphone.png" alt="projeto 1"> </a>
+    <section class="projects-area">
+          <div class="projects-titles">
+            <h2 id="lumini"> <a href="Lumini.html"> Lumini </a> </h2>
+            <h2 id="entrelinhas" style="opacity:.3;"> <a href="Entrelinhas.html"> Entrelinhas </a> </h2>
+            <h2 id="livelo" style="opacity:.3;"> <a href="Password.html"> Livelo <span>&#x1f512;</span></a> </h2>
+            <h2 id="uber" style="opacity:.3;"> <a href="Password.html"> Uber <span>&#x1f512;</span> </a> </h2>
+            <h2 id="google" style="opacity:.3;"> <a href="Password.html"> Google <span>&#x1f512;</span> </a> </h2>
+          </div>
+
+          <div id="image-work" style="background-image: url('./images/lumini.jpg');"></div>
+
+          <div class="pre-process" style="opacity:0; height:10px;">
+            <img src="images/lumini.jpg" alt="" style="width:5px;">
+            <img src="images/entrelinhas.jpg" alt="" style="width:5px;">
+            <img src="images/google-play.jpg" alt=""style="width:5px;">
+            <img src="images/uber.jpg" alt=""style="width:5px;">
+            <img src="images/livelo.jpg" alt=""style="width:5px;">
+          </div>
+
+
     </section>
 
-    <footer>
-      <div class="container">
-        <p> Contato </p>
-        <ul>
-          <li> <a href="mailto:andregsouzaweb@gmail.com"> <img src="images/icons/mail_icon.png" alt=""> </a> </li>
-          <li> <a href="https://www.linkedin.com/in/andregsouza/" target="_blank"> <img src="images/icons/linkedin_icon.png" alt=""> </a> </li>
-          <li> <a href="https://www.behance.net/andregsouza" target="_blank"> <img src="images/icons/behance_icon.png" alt=""> </a> </li>
-        </ul>
-      </div>
-    </footer>
 
-  </body>
-</html>
+    </body>
+  </html>
