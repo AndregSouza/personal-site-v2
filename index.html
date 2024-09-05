@@ -1,64 +1,202 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><!--  This site was created in Webflow. http://www.webflow.com  -->
+<!--  Last Published: Sun Sep 19 2021 19:29:48 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="612fc881a2b061617204618d" data-wf-site="60ac068a5aed0883035c0e97" lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="images/favicon.jpg">
-  <link rel="stylesheet" href="style/normalize.css">
-  <link rel="stylesheet" href="style/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
-  <script src="js/stylechange.js"></script>
-  <title>André Souza</title>
+  <title>Design Portfolio of Andre Souza</title>
+  <meta content="Hi! I am a Brazilian designer focused on product strategy, user research, and creative user experience that make a difference in people’s lives." name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/andregsouza.webflow.css" rel="stylesheet" type="text/css">
+  <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+  <script>
+window['_fs_debug'] = false;
+window['_fs_host'] = 'fullstory.com';
+window['_fs_script'] = 'edge.fullstory.com/s/fs.js';
+window['_fs_org'] = '15BFTQ';
+window['_fs_namespace'] = 'FS';
+(function(m,n,e,t,l,o,g,y){
+    if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
+    g=m[e]=function(a,b,s){g.q?g.q.push([a,b,s]):g._api(a,b,s);};g.q=[];
+    o=n.createElement(t);o.async=1;o.crossOrigin='anonymous';o.src='https://'+_fs_script;
+    y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+    g.identify=function(i,v,s){g(l,{uid:i},s);if(v)g(l,v,s)};g.setUserVars=function(v,s){g(l,v,s)};g.event=function(i,v,s){g('event',{n:i,p:v},s)};
+    g.anonymize=function(){g.identify(!!0)};
+    g.shutdown=function(){g("rec",!1)};g.restart=function(){g("rec",!0)};
+    g.log = function(a,b){g("log",[a,b])};
+    g.consent=function(a){g("consent",!arguments.length||a)};
+    g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+    g.clearUserCookie=function(){};
+    g.setVars=function(n, p){g('setVars',[n,p]);};
+    g._w={};y='XMLHttpRequest';g._w[y]=m[y];y='fetch';g._w[y]=m[y];
+    if(m[y])m[y]=function(){return g._w[y].apply(this,arguments)};
+    g._v="1.3.0";
+})(window,document,window['_fs_namespace'],'script','user');
+</script>
 </head>
-
 <body>
-<!--  <div class="mask js-mask" style="animation: statechange 3.7s">
-    <div class="mask__slice" style="animation: fadeIn 1.2s; animation-delay: 2.5s; animation-timing-function: ease-out;">
-    </div>
-    <div class="mask__slice" style="animation: fadeIn 1.2s; animation-delay: 2.5s; animation-timing-function: ease-in-out;">
-    </div>
-    <div class="mask__slice" style="animation: fadeIn 1.2s; animation-delay: 2.5s; animation-timing-function: ease-in;">
-    </div>
-    <div class="mask__inner">
-      <figure class="logo logo--mask" >
-        <img src="images/teste.png" alt="" class="js-logo" style="animation: nameIn 2.3s; animation-timing-function: ease-in-out;">
-      </figure>
-      <div class="mask-line" style="animation: underline-appear 2s;" >
-        <div class="mask-line__inner" style="animation: line-appear 2s; animation-delay: 1s;">
+  <div id="luxy" class="smooth-wrapper">
+    <div data-collapse="none" data-animation="default" data-duration="400" role="banner" class="navbar-home w-nav">
+      <div class="container w-container">
+        <div class="menu w-clearfix">
+          <a href="javascript:delay(&#x27;/&#x27;)" class="logo w-nav-link">André Souza</a>
+          <a href="javascript:delay(&#x27;about&#x27;)" data-w-id="c1d7fea0-b217-7b93-0ccd-e5509729fdb3" class="about w-nav-link">About</a>
         </div>
       </div>
     </div>
-
-  </div> -->
-    <header>
-      <a href="index.html"> André Souza </a>
-      <nav>
-        <a href="sobre.html"> Sobre mim</a>
-      </nav>
-    </header>
-
-    <section class="projects-area">
-          <div class="projects-titles">
-            <h2 id="lumini"> <a href="Lumini.html"> Lumini </a> </h2>
-            <h2 id="entrelinhas" style="opacity:.3;"> <a href="Entrelinhas.html"> Entrelinhas </a> </h2>
-            <h2 id="livelo" style="opacity:.3;"> <a href="Password.html"> Livelo <span>&#x1f512;</span></a> </h2>
-            <h2 id="uber" style="opacity:.3;"> <a href="Password.html"> Uber <span>&#x1f512;</span> </a> </h2>
-            <h2 id="google" style="opacity:.3;"> <a href="Password.html"> Google <span>&#x1f512;</span> </a> </h2>
-          </div>
-
-          <div id="image-work" style="background-image: url('./images/lumini.jpg');"></div>
-
-          <div class="pre-process" style="opacity:0; height:10px;">
-            <img src="images/lumini.jpg" alt="" style="width:5px;">
-            <img src="images/entrelinhas.jpg" alt="" style="width:5px;">
-            <img src="images/google-play.jpg" alt=""style="width:5px;">
-            <img src="images/uber.jpg" alt=""style="width:5px;">
-            <img src="images/livelo.jpg" alt=""style="width:5px;">
-          </div>
-
-
+    <section id="feature-section" class="section black wf-section">
+      <div class="container w-container">
+        <div data-w-id="187e33fe-e938-62fc-7a28-f7351803c4e8" style="-webkit-transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="text-block">Hey, I’m André! <br>Senior Product Designer based in Brazil.</div>
+        <div class="works">
+          <a data-w-id="72c8fa42-f1c6-6414-32a7-e9411ff0be37" style="opacity:0" href="javascript:delay(&#x27;works/linkme&#x27;)" class="work-div first w-inline-block">
+            <div class="work-text">
+              <h1>Link.me</h1>
+              <h2>Evolving a payment link app for brick-and-mortar businesses to sell online.</h2>
+              <div data-w-id="37705a7e-800b-dbba-bcc2-105b48bb80c3" class="button-for-link-block">
+                <div class="p-white">View the project</div>
+                <div class="arrow-component"><img src="images/icons_arrow-right-white.svg" loading="lazy" alt="" class="arrow-icon">
+                  <div style="border-color:rgb(40,40,40);background-color:rgba(0,0,0,0);-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="arrow-linkme"></div>
+                </div>
+              </div>
+            </div>
+            <div class="home-image-wrapper"><img src="images/home_linkme.png" loading="lazy" height="440" width="1159" srcset="images/home_linkme-p-500.png 500w, images/home_linkme-p-800.png 800w, images/home_linkme-p-1080.png 1080w, images/home_linkme-p-1600.png 1600w, images/home_linkme-p-2000.png 2000w, images/home_linkme.png 2318w" sizes="(max-width: 479px) 83vw, (max-width: 767px) 90vw, (max-width: 991px) 46vw, 42vw" alt="" class="home-image"></div>
+          </a>
+          <a data-w-id="55c3fc42-90f6-d51c-0257-585726fb5cbb" style="opacity:0" href="javascript:delay(&#x27;works/laureate&#x27;)" class="work-div second w-inline-block">
+            <div class="work-text">
+              <h1>Laureate</h1>
+              <h2>Redesigning the e-commerce experience for students in distance learning.</h2>
+              <div data-w-id="55c3fc42-90f6-d51c-0257-585726fb5cc1" class="button-for-link-block">
+                <div class="p-white">View the project</div>
+                <div class="arrow-component"><img src="images/icons_arrow-right-white.svg" loading="lazy" alt="" class="arrow-icon">
+                  <div style="border-color:rgb(40,40,40);background-color:rgba(0,0,0,0);-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="arrow-linkme"></div>
+                </div>
+              </div>
+            </div>
+            <div class="home-image-wrapper"><img src="images/Laureate-Home2.png" loading="lazy" height="440" width="1159" srcset="images/Laureate-Home2-p-500.png 500w, images/Laureate-Home2-p-800.png 800w, images/Laureate-Home2-p-1080.png 1080w, images/Laureate-Home2-p-1600.png 1600w, images/Laureate-Home2-p-2000.png 2000w, images/Laureate-Home2.png 2318w" sizes="(max-width: 479px) 83vw, (max-width: 767px) 90vw, (max-width: 991px) 46vw, 42vw" alt="" class="home-image"></div>
+          </a>
+          <a data-w-id="22e11a98-9ada-a6e5-bcd4-9457aaebce26" style="opacity:0" href="javascript:delay(&#x27;works/lumini&#x27;)" class="work-div third w-inline-block">
+            <div class="work-text">
+              <h1>Lumini</h1>
+              <h2 class="heading">Building a career choice experience for students with Lumini App.</h2>
+              <div data-w-id="51de24b4-5953-0536-1d28-827f9d61097f" class="button-for-link-block">
+                <div class="p-white">View the project</div>
+                <div class="arrow-component"><img src="images/icons_arrow-right-white.svg" loading="lazy" alt="" class="arrow-icon">
+                  <div style="border-color:rgb(40,40,40);background-color:rgba(0,0,0,0);-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="arrow-linkme"></div>
+                </div>
+              </div>
+            </div>
+            <div class="home-image-wrapper"><img src="images/home_lumini.png" sizes="(max-width: 479px) 83vw, (max-width: 767px) 90vw, (max-width: 991px) 46vw, 42vw" height="" width="1159" srcset="images/home_lumini-p-500.png 500w, images/home_lumini-p-800.png 800w, images/home_lumini-p-1080.png 1080w, images/home_lumini-p-1600.png 1600w, images/home_lumini-p-2000.png 2000w, images/home_lumini.png 2318w" alt="" class="home-image"></div>
+          </a>
+        </div>
+      </div>
     </section>
-
-
-    </body>
-  </html>
+    <footer id="footer" class="footer wf-section">
+      <div class="container w-container">
+        <div class="footer-text">
+          <div class="footer-title">Thanks for stopping by!</div>
+          <ul role="list" class="list w-list-unstyled">
+            <li class="list-item">
+              <a href="https://www.linkedin.com/in/andregsouza/" target="_blank" class="footer-link">Linkedin</a>
+            </li>
+            <li class="list-item">
+              <a href="documents/Andre_Souza-Resume.pdf" class="footer-link">Resume</a>
+            </li>
+            <li class="list-item">
+              <a href="mailto:andregsouzaweb@gmail.com?subject=Hey%20Andre!" class="footer-link">Email</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <header id="hero-overlay" style="display:flex;-webkit-transform:translate3d(100vw, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(100vw, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(100vw, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(100vw, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="page-transition-out wf-section">
+    <div class="centered-container w-container">
+      <div class="intro"></div>
+    </div>
+  </header>
+  <header id="hero-overlay" style="display:flex" class="page-transition-home wf-section"></header>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=60ac068a5aed0883035c0e97" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <style>
+	::-webkit-scrollbar{
+      width: 6px;
+      height: 6px;
+	}
+  	::-webkit-scrollbar-thumb{
+      background: #111;
+      border-radius: 0px;
+	}
+	::-webkit-scrollbar-thumb:hover{
+		background: #B3AFB3;
+	}
+	::-webkit-scrollbar-track{
+		background: #F0F0F0;
+		border-radius: 0px;
+		box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+	}
+</style>
+  <style>
+  .cursor-wrapper{
+    mix-blend-mode: exclusion;
+    pointer-events: none;
+   } 
+</style>
+  <script src="https://min30327.github.io/luxy.js/dist/js/luxy.js"></script>
+  <script>
+  function delay (URL) {
+  setTimeout( function() { window.location = URL }, 850 );
+  }
+</script>
+  <script charset="utf-8">
+ var isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
+ if (!isMobile) {
+      luxy.init({
+        wrapper: '#luxy',
+        wrapperSpeed: 0.055,
+    });
+ }
+ </script>
+  <style>
+  .w-background-video>video {
+      background-size: cover;
+      background-position: 50% 50%;
+      position: relative;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+    	right: auto;
+    	bottom: auto;
+    	top: auto;
+    	left: auto;
+      object-fit: cover;
+  }
+  .background-video{
+    width:100%;
+    height:100%;
+    clip-path: inset(1px 1px);
+  }
+ p{
+   -webkit-font-smoothing: antialiased;
+   }
+</style>
+  <script>
+$(window).on('beforeunload', function() {
+  $('body').hide();
+  $(window).scrollTop(0);
+});
+</script>
+  <script>
+$(window).bind("pageshow", function(event) {
+    if (event.originalEvent.persisted) {
+        window.location.reload() 
+    }
+});
+</script>
+</body>
+</html>
