@@ -1,0 +1,43 @@
+import Image from "next/image"
+
+# Edgard, the chatbot
+<time> Posted: December 03, 2018 </time>
+
+## Abstract
+
+There is a growing interest in chatbots, which are applications that involve a dialogue with humans using natural language. This article aims to understand the effects of natural interactions in experiments with conversation robots by analyzing methods used in available digital services and consolidating these learnings through the creation of a conversational interface.
+
+## The Edgard project
+
+The concept of the Edgard robot arises from questioning and satirizing, through its ironic speech, thoughts often associated with the emergence of intelligent machines, such as machines dominating the world and being more intelligent than human beings. 
+
+With insecure and sometimes flawed responses, the robot breaks the expectations of a super-intelligent machine. It exposes a point of view of the machine as a tool, demonstrating that even though they may seem terrifying, all their intentions and actions are still constructed and created by human beings. 
+
+Like all technology, the use of AI in conversational systems must necessarily be considered in the context of Ethics.
+
+## The context
+
+The narrative begins when Senac students find an artificial intelligence abandoned at the university for decades. When they turn on the machine, the robot informs them that it was part of a very advanced project for its time and was built by a big fan of Alan Turing. With a narcissistic and convinced personality, Edgard talks to people about the subjects he dominates, despite having flaws and inconsistencies in his speech and performance.
+
+## The prototype
+
+<Image src="/edgard/edgard-project.png" width={1200} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover mb-6" />
+
+The website was built using HTML, CSS, and Javascript to expand the possible usage scenarios for the experience. All files were hosted on Heroku, a cloud platform that supports several programming languages and runs the robot application programmed in Python using Watson Assistant, an IBM platform created for building virtual assistant dialogs.
+
+## User flow
+
+During the interaction with the robot, the project conversation flow occurs in 5 steps:
+
+1. A person sends a message to the robot through the website bot-ic-2018.herokuapp.com
+2. The website requests the server to deliver this message's content to the robot application.
+3. The application makes a content request with the user's message to Watson Assistant, that decodes the person's message through an intent, an entity and a dialog rule.
+4. Watson Assistant returns a response based on the rules delimited for the application.
+5. The application delivers the response to the server, which sends the message to the website, where it is updated, and the user views the content.
+
+
+## Conclusion
+
+Chatbots represent a new paradigm for how people will interact with data and services in the future. There is a gap in knowledge about the effects of natural interactions on the experience of conversational interfaces. 
+
+The results of this study provide much-needed insight into leveraging conversational experiences through human-machine interactions, providing new insights and guiding future chatbot projects.

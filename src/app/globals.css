@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+code[data-line-numbers] {
+  counter-reset: line;
+}
+
+code[data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+
+  /* Other styling */
+  display: inline-block;
+  width: 0.75rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
+}
+
+code[data-line-numbers-max-digits="2"] > [data-line]::before {
+  width: 1.25rem;
+}
+
+code[data-line-numbers-max-digits="3"] > [data-line]::before {
+  width: 1.75rem;
+}
+
+code[data-line-numbers-max-digits="4"] > [data-line]::before {
+  width: 2.25rem;
+}
+
+pre[data-theme*=" "]{
+  /* background-color: var(--shiki-light-bg); */
+  background-color: #F1F1F3;
+}
+
+code[data-theme*=" "], code[data-theme*=" "] span {
+  color: var(--shiki-light);
+  font-size: 14px;
+}
+ 
+.dark{
+  pre[data-theme*=" "]{
+    background-color: #121417;
+  }
+  
+  code[data-theme*=" "], code[data-theme*=" "] span {
+    color: var(--shiki-dark);
+    font-size: 14px;
+  }
+}
+
+
+
+.tabular {
+  font-feature-settings: "tnum", "zero";
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@layer base {
+  :root {
+    --background: 240 20% 99%;
+    --foreground: 240 5% 13%;
+
+    --component: 220 7% 100%;
+    --component-hover: 220 7% 90%;
+    --component-active: 220 7% 95%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3% 40%;
+
+    --accent: 220 7% 90%;
+    --accent-foreground: 220 7% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 85%;
+    --ring: 240 5.9% 10%;
+
+    --sidebar: 240 7% 95%;
+    --sidebar-hover: 240 7% 90%;
+    --sidebar-active: 240 7% 100%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+
+    --component: 216 13% 8%;
+    --component-hover: 216 13% 11%;
+    --component-active: 216 13% 14%;    
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 0 0% 71%;
+    --accent: 216 13% 11%;
+    --accent-foreground: 0 13% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    
+    --sidebar: 216 13% 8%;
+    --sidebar-hover: 216 13% 11%;
+    --sidebar-active: 216 13% 14%;
+
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground selection:bg-[#95a5ac40] ;
+  }
+
+  /* Type scale and style */
+
+  h1, h2, h3 {
+    @apply font-medium;
+  }
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-base;
+  }
+
+  p{
+    @apply text-base mb-6 leading-7;
+  }
+
+  em{
+    @apply font-serif font-medium;
+  }
+
+  
+
+  /* Article */
+
+  article h1{
+    @apply mb-2;
+  }
+
+  article h2{
+    @apply mt-12 mb-4;
+  }
+
+  article h3{
+    @apply mt-6 mb-2;
+  }
+
+  article time{
+    @apply block mb-8 text-muted-foreground;
+  }
+
+  article img, article video {
+    @apply border rounded-lg my-4;
+  }
+
+
+
+  /* Code block */
+
+  pre {
+    @apply overflow-x-auto p-4 rounded-md ;
+  }
+  
+  [data-rehype-pretty-code-title] {
+    @apply font-medium;
+  }
+
+  [data-rehype-pretty-code-figure]{
+    @apply my-8
+  }
+
+  [data-rehype-pretty-code-caption] {
+    @apply font-medium;
+  }
+
+  code:not(span code):not(pre code){
+    @apply p-1 bg-sidebar rounded-md font-mono text-[13px];    
+  }
+}
