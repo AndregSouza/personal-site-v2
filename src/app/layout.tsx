@@ -9,6 +9,7 @@ import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Button } from "@/components/ui/button";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const Sohne = localFont({
   src: [
@@ -70,6 +71,7 @@ f="XMLHttpRequest",g._w={},g._w[f]=m[f],g._w[s]=m[s],m[s]&&(m[s]=function(){retu
       </Script>
 
       <body className={`${Sohne.variable} ${Plantijn.variable} ${"flex bg-background md:bg-sidebar flex-col md:flex-row"}`}>
+        <SpeedInsights />
         <Analytics />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Sidebar animate={false}>
