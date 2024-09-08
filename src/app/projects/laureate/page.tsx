@@ -67,13 +67,13 @@ export default function Home() {
         <p> With the new workflow, Laureate can track information at each step by the user if they abandoned the funnel halfway through, enabling them to send more relevant and personalized information. </p>
         <h2> Introducing Laureate </h2>
         <p> We designed the new e-commerce experience to convey trust for students with straightforward navigation and content that showcases the university brands, institutions, and courses approved by MEC. </p>
-        <video autoPlay loop muted src="../projects/laureate/Coursepage-compress-transcode.webm" />
+        <video autoPlay loop muted playsInline src="../projects/laureate/Coursepage-compress-transcode.webm" />
         <h3> Designed for scale </h3>
         <p> We conceived the visual design as a flexible system that adapts the new application model to all universities’ brand systems, focused on users’ actions in each journey step. </p>
-        <video autoPlay loop muted src="../projects/laureate/desktop-linkme_1-transcode.webm"/>
+        <video autoPlay loop muted playsInline src="../projects/laureate/desktop-linkme_1-transcode.webm"/>
         <h3> Quick application process </h3>
         <p> With a few steps and questions, students could apply for the courses. We fast-tracked the process using the discounts provided by the ENEM scores - a perfect match of motivation and ease of use. </p>
-        <video autoPlay loop muted src="../projects/laureate/Screens-Motion-1-transcode.webm"/>
+        <video autoPlay loop muted playsInline src="../projects/laureate/Screens-Motion-1-transcode.webm"/>
         <h3> Easy decision making </h3>
         <p> We designed the new course page to bring all the essential information for students. We tell a story presenting the seal of approval by MEC, a summary of the course, the extent of its content with an online class preview, leading market indicators for the profession, and frequently asked questions about the occupation. </p>
         <h2> Results </h2>

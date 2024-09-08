@@ -72,15 +72,15 @@ export default function Home() {
         <p> These findings were challenging to address because we needed different teams with diverse priorities. However, the time and energy spent to solve these issues were essential to help businesses survive during the pandemic. </p>
         <h2> Improving Link.me </h2>
         <p> Link.me was initially created for digital companies focused on the mobile app. By 2020, tables have turned as physical businesses started to shift into digital. With the new strategy and insights, we improved Link.me to be more competitive and accessible for fast-growing companies. </p>
-        <video autoPlay loop muted src="../projects/linkme/Intro-Sales-1-transcode.webm" />
+        <video autoPlay loop muted playsInline src="../projects/linkme/Intro-Sales-1-transcode.webm" />
         <h3> New management levels for merchants </h3>
         <p> We created the sales profile to help business owners manage their employees' access to the product by removing sensitive information and focusing on selling features. </p>
 
-        <video autoPlay loop muted src="../projects/linkme/Desktop-Linkme-1-transcode.webm" />
+        <video autoPlay loop muted playsInline src="../projects/linkme/Desktop-Linkme-1-transcode.webm" />
         <h3> From mobile to desktop </h3>
         <p> We created personalized access for our customers to access Link.me information on the Pagar.me web platform, creating a consolidated view and flow to manage finances. </p>
 
-        <video autoPlay loop muted src="../projects/linkme/Anticipation-1-transcode.webm"></video>
+        <video autoPlay loop muted playsInline src="../projects/linkme/Anticipation-1-transcode.webm"></video>
         <h3> New anticipation models </h3>
         <p> We managed to offer a new anticipation model of 2 days to ensure that all businesses could adapt their cash flow management to our service. Also, we restrained the payments fraud and e-commerce risk at their lowest levels. </p>
         <h2> Results </h2>

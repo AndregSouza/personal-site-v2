@@ -64,16 +64,16 @@ export default function Home() {
         <p>We established all the principles required for students to raise maturity aiming at their insertion in the professional market with this framework. As a result, we created a simple and effective journey that adjusts to all types of students.</p>
         <h2>Introducing Lumini</h2>
         <p>Life is made up of choices. Sometimes a single decision can inspire people to do the best work of their lives. Lumini is here to help you make one of many important decisions in your life.</p>
-        <video autoPlay loop muted src="../projects/lumini/onboarding2-transcode.webm"/>
+        <video autoPlay loop muted playsInline src="../projects/lumini/onboarding2-transcode.webm"/>
         <h3>Defining your profile</h3>
         <p>We identify the student's professional maturity level through activities and questionnaires and categorize them into five different user models to offer a deeply personalized experience.</p>
-        <video autoPlay loop muted src="../projects/lumini/Gostos-1-transcode.webm"/>
+        <video autoPlay loop muted playsInline src="../projects/lumini/Gostos-1-transcode.webm"/>
         <h3>Reflecting on your skills</h3>
         <p>We created activities that encourage students to reflect on their personalities and motivates them to understand that their strengths, passions, and interests correlate to some professions.</p>
-        <video autoPlay loop muted src="../projects/lumini/Experienciando-1-transcode.webm"/>
+        <video autoPlay loop muted playsInline src="../projects/lumini/Experienciando-1-transcode.webm"/>
         <h3> Getting in touch with professions </h3>
         <p>We suggest students select at least three occupations and search for information about these jobs. Later, we connect students to events with professional workers who can share their life experiences about the reality of these jobs, creating accurate expectations.</p>
-        <video autoPlay loop muted src="../projects/lumini/jornada-transcode.webm"/>
+        <video autoPlay loop muted playsInline src="../projects/lumini/jornada-transcode.webm"/>
         <h3>Ending the journey</h3>
         <p>Lastly, we help students find their desired occupation no matter how many times they want to iterate on the journey. Then, when satisfied with the results, we ask for feedback to improve our journey and illuminate more students.</p>
       </article>
