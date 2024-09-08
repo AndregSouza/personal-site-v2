@@ -31,28 +31,28 @@ export default function Home() {
         <p> We interviewed 6 university center owners, 12 undergrad students, and 4 institutions managers in São Paulo. We aimed to gather insights into how they feel, perceive, and think about online distance learning. </p>
         <div className="flex flex-col gap-8 mb-4">
           <div className="flex flex-row gap-8">
-            <img className="w-40 h-40 rounded-full" src="../projects/laureate/icon_mec.svg" alt="" />
+            <img className="w-24 h-24 md:w-40 md:h-40 rounded-full" src="../projects/laureate/icon_mec.svg" alt="" />
             <div className="content-center">
               <h3> “The course needs approval by MEC.” </h3>
               <p> Students felt insecure navigating the old website because they could not determine if institutions and courses had approval by MEC, the Brazilian federal education agency. </p>
             </div>
           </div>
           <div className="flex flex-row gap-8">
-            <img className="w-40 h-40 rounded-full" src="../projects/laureate/icon_person.svg" alt="" />
+            <img className="w-24 h-24 md:w-40 md:h-40 rounded-full" src="../projects/laureate/icon_person.svg" alt="" />
             <div className="content-center">
               <h3> “I want a university center close to my home or work.” </h3>
               <p> According to the Brazilian federal education agency, online distance learning format students must visit a university center for presential tests. </p>
             </div>
           </div>
           <div className="flex flex-row gap-8">
-            <img className="w-40 h-40 rounded-full" src="../projects/laureate/icon_certificate.svg" alt="" />
+            <img className="w-24 h-24 md:w-40 md:h-40 rounded-full" src="../projects/laureate/icon_certificate.svg" alt="" />
             <div className="content-center">
               <h3> “I want to use my ENEM score to skip the admission exam.” </h3>
               <p> Students could get discounts that would make up to 100% of the monthly fee without even sitting to an admission exam, determined by their scores on ENEM. </p>
             </div>
           </div>
           <div className="flex flex-row gap-8">
-            <img className="w-40 h-40 rounded-full" src="../projects/laureate/icon_lamp.svg" alt="" />
+            <img className="w-24 h-24 md:w-40 md:h-40 rounded-full" src="../projects/laureate/icon_lamp.svg" alt="" />
             <div className="content-center">
               <h3> “I am doing online graduation to help me get a better job.” </h3>
               <p> Students who opted for online graduation envisioned the courses as an investment to replace their present job for future ones with better quality of life. </p>

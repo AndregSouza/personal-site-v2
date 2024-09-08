@@ -35,28 +35,28 @@ export default function Home() {
         <p> We interviewed 15 customers to learn about the expectations and ideas for improvement they had about our product. We also asked customers to walk us through how they complete their management tasks and their daily frustrations. </p>
         <div className="flex flex-col gap-8 mb-4">
           <div className="flex flex-row gap-8">
-            <img className="w-40 h-40 rounded-full" src="../projects/linkme/Illustration1.svg" alt="" />
+            <img className="w-24 h-24 md:w-40 md:h-40 rounded-full" src="../projects/linkme/Illustration1.svg" alt="" />
             <div className="content-center">
               <h3> "I can't give access to my employees." </h3>
               <p> The business owner did not feel protected inviting SolarPanels to his company account because they would see all its balance, sales, and withdrawal money. </p>
             </div>
           </div>
           <div className="flex flex-row gap-8">
-            <img className="w-40 h-40 rounded-full" src="../projects/linkme/Illustration2.svg" alt="" />
+            <img className="w-24 h-24 md:w-40 md:h-40 rounded-full" src="../projects/linkme/Illustration2.svg" alt="" />
             <div className="content-center">
               <h3> "I can't manage solely on my phone." </h3>
               <p> Customers needed a consolidated view and flow to manage the spreadsheets from custom tools on their computers besides Link.me. </p>
             </div>
           </div>
           <div className="flex flex-row gap-8">
-            <img className="w-40 h-40 rounded-full" src="../projects/linkme/Illustration3.svg" alt="" />
+            <img className="w-24 h-24 md:w-40 md:h-40 rounded-full" src="../projects/linkme/Illustration3.svg" alt="" />
             <div className="content-center">
               <h3> "I don't know how much I paid" </h3>
               <p> Customers expressed that executing payment conciliation at the end of the month was extremely hard considering Link.me didn't provide expense reports. </p>
             </div>
           </div>
           <div className="flex flex-row gap-8">
-            <img className="w-40 h-40 rounded-full" src="../projects/linkme/Illustration4.svg" alt="" />
+            <img className="w-24 h-24 md:w-40 md:h-40 rounded-full" src="../projects/linkme/Illustration4.svg" alt="" />
             <div className="content-center">
               <h3> "I need a faster cash flow." </h3>
               <p> Link.me only offered two anticipation models, 30 days and 15 days. Still, it wasn't fast enough to ensure cash flow for some kinds of businesses. </p>
