@@ -8,11 +8,14 @@ import { Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, Breadcr
 export default function Home() {
   return (
     <div className="w-full flex flex-col max-w-3xl p-6 gap-4 md:p-8 md:gap-6 lg:gap-8 lg:p-16 self-center">
-      <Link href="/projects">
-        <Button size="default" variant="outline" className="content-center">
-          <ArrowLeftCircle className="mr-2 h-4 w-4" /> Projects
-        </Button>
-      </Link>
+
+      <Button asChild size="default" variant="outline" className="w-fit">
+        <Link href="/projects" className="flex flex gap-2">
+          <ArrowLeftCircle className="h-4 w-4" aria-label="Back" /> Projects
+        </Link>
+      </Button>
+
+
       <article>
 
         <h1> Linkme </h1>

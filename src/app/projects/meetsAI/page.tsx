@@ -8,18 +8,20 @@ import { Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, Breadcr
 export default function Home() {
   return (
     <div className="w-full flex flex-col max-w-3xl p-6 gap-4 md:p-8 md:gap-6 lg:gap-8 lg:p-16 self-center">
-      <Link href="/projects">
-        <Button size="default" variant="outline" className="content-center">
-          <ArrowLeftCircle className="mr-2 h-4 w-4" /> Projects
-        </Button>
-      </Link>
+      
+      <Button asChild size="default" variant="outline" className="w-fit">
+        <Link href="/projects" className="flex flex gap-2">
+          <ArrowLeftCircle className="h-4 w-4" aria-label="Back" /> Projects
+        </Link>
+      </Button>
+
       <article>
 
         <h1> Linkme </h1>
         <p> Link.me is a payment link app that empowers digital and brick-and-mortar businesses to sell products and services online without a website. </p>
         <p> I worked as a Product Designer at Link.me, leading the product strategy and design for the mobile team by creating a culture deeply oriented around customers with research. </p>
         <img src="../projects/linkme/linkme_home.png" alt="" />
-        
+
         <h2> Perfecting the Management </h2>
         <p> In 2019, Pagar.me released a payment link app for 100 companies in Brazil. By 2020, Link.me has transacted over 100 million payments with over 5.000 companies. </p>
         <p> When Brazil started the lockdown due to Covid-19, the app became the most reliable solution to help small businesses survive by selling online and shift into digital. </p>

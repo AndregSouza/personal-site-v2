@@ -8,18 +8,20 @@ import { Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, Breadcr
 export default function Home() {
   return (
     <div className="w-full flex flex-col max-w-3xl p-6 gap-4 md:p-8 md:gap-6 lg:gap-8 lg:p-16 self-center">
-      <Link href="/projects">
-        <Button size="default" variant="outline" className="content-center">
-          <ArrowLeftCircle className="mr-2 h-4 w-4" /> Projects
-        </Button>
-      </Link>
+
+      <Button asChild size="default" variant="outline" className="w-fit">
+        <Link href="/projects" className="flex flex gap-2">
+          <ArrowLeftCircle className="h-4 w-4" aria-label="Back" /> Projects
+        </Link>
+      </Button>
+
       <article>
 
         <h1> Laureate </h1>
         <p> Laureate is a global leader in higher education with more than 70 educational institutions and 1 million students in the Americas, Europe, Asia, Africa, and the Middle East. </p>
         <p> I was responsible for the research, interaction design, and copywriting for Laureate, working with two visual designers to redesign the e-commerce experience. </p>
         <img src="../projects/laureate/Laureate-Home-p-1080.png" alt="" />
-        
+
         <h2> Conveying Trust of an Education Titan </h2>
         <p> The Laureate company approached us to help them communicate the best of a robust education group and bring out the critical information for people to enroll in online distance learning. </p>
         <p> The project involved redesigning the Laureate e-commerce website and optimizing the enrollment flow of information needed for students in online distance learning. </p>
@@ -70,17 +72,17 @@ export default function Home() {
         <video autoPlay loop muted playsInline src="../projects/laureate/Coursepage-compress-transcode.mp4" />
         <h3> Designed for scale </h3>
         <p> We conceived the visual design as a flexible system that adapts the new application model to all universities’ brand systems, focused on users’ actions in each journey step. </p>
-        <video autoPlay loop muted playsInline src="../projects/laureate/desktop-linkme_1-transcode.mp4"/>
+        <video autoPlay loop muted playsInline src="../projects/laureate/desktop-linkme_1-transcode.mp4" />
         <h3> Quick application process </h3>
         <p> With a few steps and questions, students could apply for the courses. We fast-tracked the process using the discounts provided by the ENEM scores - a perfect match of motivation and ease of use. </p>
-        <video autoPlay loop muted playsInline src="../projects/laureate/Screens-Motion-1-transcode.mp4"/>
+        <video autoPlay loop muted playsInline src="../projects/laureate/Screens-Motion-1-transcode.mp4" />
         <h3> Easy decision making </h3>
         <p> We designed the new course page to bring all the essential information for students. We tell a story presenting the seal of approval by MEC, a summary of the course, the extent of its content with an online class preview, leading market indicators for the profession, and frequently asked questions about the occupation. </p>
         <h2> Results </h2>
         <p> The redesign of the e-commerce and the enrollment flow of Laureate had a significant impact on acquisition, activation and retention metrics. </p>
 
         <div className="grid grid-rows mt-4 gap-6 sm:grid-cols-3 lg:grid-cols-3">
-        <Card>
+          <Card>
             <CardHeader className="py-4">
               <CardDescription> Page views </CardDescription>
               <CardTitle>+70%</CardTitle>
