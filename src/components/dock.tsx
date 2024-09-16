@@ -48,7 +48,7 @@ export default function Dock() {
                 <ModeToggle />
             </AppIcon>
 
-            <AppIcon mouseX={mouseX}>
+            <AppIcon mouseX={mouseX}> 
                 <Volume2 className="h-4 w-4" />
             </AppIcon>
 

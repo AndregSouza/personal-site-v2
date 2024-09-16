@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Logo = React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>((props, ref) => {
+const Logo = React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>((props, ref) => {
   return (
     <svg
       ref={ref}
@@ -21,3 +21,7 @@ export const Logo = React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement
     </svg>
   );
 });
+
+Logo.displayName = 'Logo';
+
+export { Logo };
