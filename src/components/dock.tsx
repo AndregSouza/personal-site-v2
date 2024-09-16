@@ -20,7 +20,7 @@ export default function Dock() {
 
     return (
         <motion.div
-            className="absolute bottom-5 w-fit left-0 right-0 mx-auto flex h-16 items-center gap-4 rounded-lg bg-sidebar px-4 py-3"
+            className="absolute bottom-4 w-fit left-0 right-0 mx-auto  z-10 flex h-[5.2rem] items-center gap-[1.05rem] rounded-3xl border bg-sidebar px-4 py-2"
         >
             <AppIcon mouseX={mouseX} href="/">
                 <Home className="h-4 w-4" />
@@ -42,15 +42,13 @@ export default function Dock() {
                 <Camera className="h-4 w-4" />
             </AppIcon>
 
-
-
-            <Separator orientation="vertical" />
+            <Separator className="mx-1.5" orientation="vertical" />
 
             <AppIcon mouseX={mouseX}>
                 <ModeToggle />
             </AppIcon>
 
-            <AppIcon mouseX={mouseX} href="https://www.linkedin.com/in/andregsweb/">
+            <AppIcon mouseX={mouseX}>
                 <Volume2 className="h-4 w-4" />
             </AppIcon>
 
@@ -78,7 +76,7 @@ function AppIcon({ mouseX, children, href }: { mouseX: MotionValue, children?: R
                 asChild 
                 variant="ghost" 
                 size="icon" 
-                className={`aspect-square w-10 rounded-md bg-sidebar-active relative flex items-center justify-center ${isActive ? 'border-2 border-foreground' : 'border-none'}`}
+                className={`aspect-square w-[3.40rem] h-[3.40rem] mix-blend-normal border rounded-xl bg-sidebar-active relative flex items-center justify-center ${isActive ? 'border-2 border-foreground border-none' : 'border-none'}`}
             >
                 {href ? (
                     <Link href={href}>
