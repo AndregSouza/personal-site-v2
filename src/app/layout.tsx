@@ -1,12 +1,7 @@
 import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata } from "next";
-import { Sidebar, SidebarBody, SidebarLinks } from '@/components/aceternity/sidebar'
 import localFont from 'next/font/local'
-import Link from "next/link"
 import "./globals.css";
-import { X } from "lucide-react";
-import { ModeToggle } from "@/components/ui/mode-toggle";
-import { Button } from "@/components/ui/button";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"

@@ -1,91 +1,147 @@
 "use client"
-import React, { useRef, useEffect } from "react";
-import {
-    MotionValue,
-    motion,
-    useMotionValue,
-    useSpring,
-    useTransform,
-} from "framer-motion";
-import { Linkedin, Menu, Instagram, Home, Camera, Package, User, Github, Twitter, Notebook, ArrowUpRight, X, Volume2 } from "lucide-react";
-import { Logo } from "./logo"
-import { ModeToggle } from "./ui/mode-toggle";
+import React from "react";
+import { motion } from "framer-motion";
+import { CameraOutlined, CameraFilled, NotebookOutlined, NotebookFilled, UserOutlined, UserFilled, HomeFilled, HomeOutlined, VolumeOnline, VolumeMuted, CubeFilled, CubeOutlined, Sun, Moon } from "./icons/index";
+
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { Separator } from "./ui/separator";
 import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
+import useSound from 'use-sound';
 
 export default function Dock() {
-    let mouseX = useMotionValue(Infinity);
+    const { theme, setTheme } = useTheme();
+    const pathname = usePathname();
+
+    const [isSoundEnabled, setIsSoundEnabled] = React.useState(true);
+    const [forceSoundEnabled, setForceSoundEnabled] = React.useState(true);
+
+    const [playThemeSound] = useSound("/sounds/back.wav", { soundEnabled: isSoundEnabled });
+    const [playEnabledSound] = useSound("/sounds/back.wav", { soundEnabled: isSoundEnabled });
+    const [playDisabledSound] = useSound("/sounds/back.wav", { soundEnabled: isSoundEnabled });
+
+    const handleAudioClick = () => { 
+        if (isSoundEnabled) {
+            playEnabledSound();
+            stop();  // Stops sound if sound is disabled
+        } else {
+            playDisabledSound({forceSoundEnabled});  // Plays sound if sound is enabled
+        }
+        setIsSoundEnabled(!isSoundEnabled);
+    };
+
+    const handleThemeClick = () => {
+        playThemeSound();
+        setTheme(theme === "dark" ? "light" : "dark");
+    };
 
     return (
         <motion.div
-            className="absolute bottom-4 w-fit left-0 right-0 mx-auto  z-10 flex h-[5.2rem] items-center gap-[1.05rem] rounded-3xl border bg-sidebar px-4 py-2"
+            className="fixed bottom-6 w-fit left-0 right-0 mx-auto z-10 flex h-[4rem] items-center gap-2 rounded-2xl border bg-sidebar px-4 py-2"
         >
-            <AppIcon mouseX={mouseX} href="/">
-                <Home className="h-4 w-4" />
-            </AppIcon>
+            <AppIcon
+                href="/"
+                ariaLabel="Home"
+                isActive={pathname === "/"}
+                FilledIcon={HomeFilled}
+                OutlinedIcon={HomeOutlined}
+            />
 
-            <AppIcon mouseX={mouseX} href="/projects">
-                <Package className="h-4 w-4" />
-            </AppIcon>
+            <AppIcon
+                href="/projects"
+                ariaLabel="Projects"
+                isActive={pathname.startsWith("/projects")}
+                FilledIcon={CubeFilled}
+                OutlinedIcon={CubeOutlined}
+            />
 
-            <AppIcon mouseX={mouseX} href="/about">
-                <User className="h-4 w-4" />
-            </AppIcon>
+            <AppIcon
+                href="/about"
+                ariaLabel="About me"
+                isActive={pathname.startsWith("/about")}
+                FilledIcon={UserFilled}
+                OutlinedIcon={UserOutlined}
+            />
 
-            <AppIcon mouseX={mouseX} href="/notes">
-                <Notebook className="h-4 w-4" />
-            </AppIcon>
+            <AppIcon
+                href="/notes"
+                ariaLabel="Notes"
+                isActive={pathname.startsWith("/notes")}
+                FilledIcon={NotebookFilled}
+                OutlinedIcon={NotebookOutlined}
+            />
 
-            <AppIcon mouseX={mouseX} href="/photos">
-                <Camera className="h-4 w-4" />
-            </AppIcon>
+            <AppIcon
+                href="/photos"
+                ariaLabel="Photos"
+                isActive={pathname.startsWith("/photos")}
+                FilledIcon={CameraFilled}
+                OutlinedIcon={CameraOutlined}
+            />
 
             <Separator className="mx-1.5" orientation="vertical" />
 
-            <AppIcon mouseX={mouseX}>
-                <ModeToggle />
-            </AppIcon>
+            <TooltipProvider>
+                <Tooltip>
+                    <TooltipTrigger asChild>
+                        <Button variant="ghost" size="icon" onClick={handleThemeClick} aria-label="Switch Dark/Light Themes" className="aspect-square w-[2.5rem] h-[2.5rem] mix-blend-normal rounded-xl relative flex items-center justify-center">
+                            <Sun className="h-5 w-5 rotate-0 scale-100 transition-all duration-300 dark:-rotate-90 dark:scale-0" />
+                            <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all duration-300 dark:rotate-0 dark:scale-100" />
+                        </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                        <span>Toggle theme</span>
+                    </TooltipContent>
+                </Tooltip>
+            </TooltipProvider>
 
-            <AppIcon mouseX={mouseX}> 
-                <Volume2 className="h-4 w-4" />
-            </AppIcon>
+            <TooltipProvider>
+                <Tooltip>
+                    <TooltipTrigger asChild>
+                        <Button variant="ghost" size="icon" onClick={handleAudioClick} aria-label="Toggle Audio" className="aspect-square w-[2.5rem] h-[2.5rem] mix-blend-normal rounded-xl relative flex items-center justify-center">
 
+                            {isSoundEnabled ? (
+                                <VolumeOnline className="h-5 w-5" />
+                            ) : (
+                                <VolumeMuted className="absolute h-5 w-5" />
+                            )}
+
+                        </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                        <span>Toggle audio</span>
+                    </TooltipContent>
+                </Tooltip>
+            </TooltipProvider>
         </motion.div>
     );
 }
 
-function AppIcon({ mouseX, children, href }: { mouseX: MotionValue, children?: React.ReactNode, href?: string }) {
-    const pathname = usePathname();
-    let ref = useRef<HTMLDivElement>(null);
-
-    let distance = useTransform(mouseX, (val) => {
-        let bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
-        return val - bounds.x - bounds.width / 2;
-    });
-
-    let widthSync = useTransform(distance, [-150, 0, 150], [40, 100, 40]);
-    let width = useSpring(widthSync, { mass: 0.1, stiffness: 150, damping: 12 });
-
-    const isActive = href ? (href === "/" ? pathname === href : pathname.startsWith(href)) : false;
+function AppIcon({ href, ariaLabel, isActive, FilledIcon, OutlinedIcon }: { href: string, ariaLabel: string, isActive: boolean, FilledIcon: React.ComponentType<{ className: string }>, OutlinedIcon: React.ComponentType<{ className: string }> }) {
+    const Icon = isActive ? FilledIcon : OutlinedIcon;
 
     return (
-        <div className="flex flex-col gap-1.5 items-center">
-            <Button 
-                asChild 
-                variant="ghost" 
-                size="icon" 
-                className={`aspect-square w-[3.40rem] h-[3.40rem] mix-blend-normal border rounded-xl bg-sidebar-active relative flex items-center justify-center ${isActive ? 'border-2 border-foreground border-none' : 'border-none'}`}
-            >
-                {href ? (
-                    <Link href={href}>
-                        {children}
-                    </Link>
-                ) : (
-                    children
-                )}
-            </Button>
-        </div>
+        <TooltipProvider>
+            <Tooltip>
+                <TooltipTrigger asChild>
+                    <Button
+                        asChild
+                        variant="ghost"
+                        size="icon"
+                        className={`aspect-square w-[2.5rem] h-[2.5rem] mix-blend-normal rounded-xl relative flex items-center justify-center ${isActive ? 'bg-sidebar-active' : ''}`}
+                        aria-label={ariaLabel}
+                    >
+                        <Link href={href}>
+                            <Icon className="h-5 w-5" />
+                        </Link>
+                    </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                    <span>{ariaLabel}</span>
+                </TooltipContent>
+            </Tooltip>
+        </TooltipProvider>
     );
 }

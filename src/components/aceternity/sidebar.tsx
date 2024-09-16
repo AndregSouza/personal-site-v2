@@ -6,7 +6,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Linkedin, Menu, Instagram, Home, Camera, Package, User, Github, Twitter, Notebook, ArrowUpRight, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import useSound from 'use-sound';
 
 interface Links {
   id: number;
@@ -192,8 +191,6 @@ export const SidebarLinks = ({ className, ...props }: { className?: string; prop
 
   let [activeTab, setActiveTab] = React.useState(pathname === "/" ? tabs[0].id : tabs[initialtab].id)
 
-  const [play] = useSound("/sounds/open.wav");
-
   React.useEffect(() => {
     const activeItem = tabs.find((item) => {
       if (item.href === "/") {
@@ -211,7 +208,6 @@ export const SidebarLinks = ({ className, ...props }: { className?: string; prop
   
   const handleLinkClick = () => {
     setOpen(false)
-    play()
   };
 
   return (
