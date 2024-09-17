@@ -3,7 +3,6 @@ import { AreaChartHero } from "@/components/tremor-components/areachart";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeftCircle } from "lucide-react";
-import { Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 export default function Home() {
   return (

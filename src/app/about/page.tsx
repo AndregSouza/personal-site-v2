@@ -2,22 +2,11 @@ import * as React from "react";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { Code } from "@/components/code";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 export default function About() {
   return (
     <div className="w-full flex flex-col max-w-3xl p-6 gap-4 md:p-8 md:gap-6 lg:gap-8 lg:p-16 self-center">
-      <Breadcrumb>
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/">Home</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage>About</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
+ 
       <h1> About </h1>
       <section className="flex flex-1 flex-col">
         <Image priority src="/DSCF1691.png" width={1200} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover mb-6" />
