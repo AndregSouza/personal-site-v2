@@ -203,3 +203,6 @@ function ModeToggle({ handleClick, FilledIcon, OutlinedIcon, ariaLabel, isActive
         </TooltipProvider>
     );
 }
+
+AppIcon.displayName = "AppIcon";
+ModeToggle.displayName = "ModeToggle";
