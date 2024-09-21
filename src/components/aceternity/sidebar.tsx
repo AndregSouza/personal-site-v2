@@ -167,7 +167,7 @@ export const SidebarLinks = ({ className, ...props }: { className?: string; prop
     { id: 2, label: "About", href: "/about", icon: <User className="h-4 w-4" />, type: "internal" },
     { id: 3, label: "Notes", href: "/notes", icon: <Notebook className="h-4 w-4" />, type: "internal" },
     { id: 4, label: "Photos", href: "/photos", icon: <Camera className="h-4 w-4" />, type: "internal" },
-    
+
     /* { id: 9, label: "3D", href: "/3d", icon: <Camera className="h-4 w-4" />, type: "internal" } */
 
     { id: 5, label: "Twitter", href: "https://x.com/andregsweb", icon: <Twitter className="h-4 w-4" />, type: "external" },
@@ -205,7 +205,7 @@ export const SidebarLinks = ({ className, ...props }: { className?: string; prop
       setActiveTab(activeItem.id);
     }
   }, [pathname]);
-  
+
   const handleLinkClick = () => {
     setOpen(false)
   };
