@@ -18,4 +18,5 @@ interface MotionLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> 
 
 export const MotionLink = motion(Component);
 
+Component.displayName = "Component"
 MotionLink.displayName = "MotionLink"
