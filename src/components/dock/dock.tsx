@@ -24,8 +24,8 @@ export default function Dock() {
 
     const [playDarkSound] = useSound("/sounds/darkmode.wav", { soundEnabled: isSoundEnabled });
     const [playLightSound] = useSound("/sounds/lightmode.wav", { soundEnabled: isSoundEnabled });
-    const [playEnabledSound] = useSound("/sounds/enable.wav", { forceSoundEnabled: true });
-    const [playDisabledSound] = useSound("/sounds/disable.wav", { soundEnabled: isSoundEnabled });
+    const [playEnabledSound] = useSound("/sounds/turn-on.wav", { forceSoundEnabled: true });
+    const [playDisabledSound] = useSound("/sounds/turn-off.wav", { soundEnabled: isSoundEnabled });
     const [playClickSound] = useSound("/sounds/click.wav", { soundEnabled: isSoundEnabled });
 
     const handleAudioClick = () => {
