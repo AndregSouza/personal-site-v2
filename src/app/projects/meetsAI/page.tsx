@@ -6,7 +6,7 @@ import { ArrowLeftCircle } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="w-full flex flex-col max-w-3xl p-6 gap-4 md:p-8 md:gap-6 lg:gap-8 lg:p-16 self-center">
+    <div className="w-full pb-24 flex flex-col max-w-3xl p-6 gap-4 md:pt-8 md:px-8 md:pb-24 md:gap-6 lg:gap-8 lg:pt-16 lg:px-16 lg:pb-24 self-center">
       
       <Button asChild size="default" variant="outline" className="w-fit">
         <Link href="/projects" className="flex flex gap-2">

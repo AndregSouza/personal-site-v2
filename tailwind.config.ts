@@ -65,14 +65,9 @@ const config: Config = {
         },
         component: {
           DEFAULT: "hsl(var(--component))",
-          hover: "hsl(var(--component-hover))",
           active: "hsl(var(--component-active))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar))",
-          hover: "hsl(var(--sidebar-hover))",
-          active: "hsl(var(--sidebar-active))",
-        },
+        sidebar: "hsl(var(--sidebar))",
 
         tremor: {
           brand: {

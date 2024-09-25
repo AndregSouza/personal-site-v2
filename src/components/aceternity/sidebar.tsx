@@ -216,7 +216,7 @@ export const SidebarLinks = ({ className, ...props }: { className?: string; prop
         <Link
           key={item.id}
           className={
-            cn(`relative text-sm flex items-center gap-3 font-medium rounded-lg px-3 h-auto py-4 text-muted-foreground hover:text-foreground hover:bg-sidebar-hover sm:py-2 }`,
+            cn(`relative text-sm flex items-center gap-3 font-medium rounded-lg px-3 h-auto py-4 text-muted-foreground hover:text-foreground hover:bg-component-hover sm:py-2 }`,
               className)}{...props}
           href={item.href}
           target={item.type === "external" ? "_blank" : "_self"}

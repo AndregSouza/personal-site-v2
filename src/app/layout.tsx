@@ -70,10 +70,10 @@ f="XMLHttpRequest",g._w={},g._w[f]=m[f],g._w[s]=m[s],m[s]&&(m[s]=function(){retu
         <SpeedInsights />
         <Analytics />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Dock></Dock>
           <main className="h-full m-0 flex flex-col w-full bg-background m-0 md:m-2 md:h-[calc(100svh_-_1rem)] sm:rounded-lg overflow-auto shadow-md">
             {children}
           </main>
+          <Dock></Dock>
         </ThemeProvider>
       </body>
     </html >

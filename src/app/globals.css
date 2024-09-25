@@ -6,6 +6,13 @@ body.no-scroll {
   overflow: hidden;
 }
 
+@media (hover: none) {
+  .audio-toggle-button {
+      display: none;
+  }
+}
+
+
 code[data-line-numbers] {
   counter-reset: line;
 }
@@ -55,8 +62,6 @@ code[data-theme*=" "], code[data-theme*=" "] span {
   }
 }
 
-
-
 .tabular {
   font-feature-settings: "tnum", "zero";
 }
@@ -85,34 +90,32 @@ code[data-theme*=" "], code[data-theme*=" "] span {
 
 @layer base {
   :root {
-    --background: 240 20% 99%;
-    --foreground: 240 5% 13%;
+    --background: 0 0% 98%;
+    --foreground: 220 5% 13%;
 
     --component: 220 7% 100%;
-    --component-hover: 220 7% 90%;
-    --component-active: 220 7% 95%;
+    --component-active: 220 7% 92%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
+    --popover-foreground: 220 7% 3.9%;
+    --primary: 220 7% 10%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3% 40%;
+    --secondary: 220 4.8% 95.9%;
+    --secondary-foreground: 220 7% 10%;
+    --muted: 220 4.8% 95.9%;
+    --muted-foreground: 220 3% 40%;
 
-    --accent: 220 7% 90%;
+    --accent: 220 7% 93%;
     --accent-foreground: 220 7% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 85%;
-    --ring: 240 5.9% 10%;
+    
+    --border: 220 7% 90%;
+    --input: 220 7% 85%;
+    --ring: 220 7% 10%;
 
-    --sidebar: 240 7% 95%;
-    --sidebar-hover: 240 7% 90%;
-    --sidebar-active: 240 7% 100%;
+    --sidebar: 220 7% 95%;
 
     --radius: 0.5rem;
   }
@@ -121,30 +124,27 @@ code[data-theme*=" "], code[data-theme*=" "] span {
     --background: 0 0% 4%;
     --foreground: 0 0% 98%;
 
-    --component: 216 13% 8%;
-    --component-hover: 216 13% 11%;
-    --component-active: 216 13% 14%;    
+    --component: 220 13% 8%;
+    --component-active: 220 13% 14%;    
 
-    --popover: 240 10% 3.9%;
+    --popover: 220 10% 3.9%;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
+    --primary-foreground: 220 5.9% 10%;
+    --secondary: 220 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
+    --muted: 220 3.7% 15.9%;
     --muted-foreground: 0 0% 71%;
-    --accent: 216 13% 11%;
+    --accent: 220 13% 11%;
     --accent-foreground: 0 13% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
+    --border: 220 3.7% 15.9%;
+    --input: 220 3.7% 15.9%;
     
-    --sidebar: 216 13% 8%;
-    --sidebar-hover: 216 13% 11%;
-    --sidebar-active: 216 13% 14%;
+    --sidebar: 220 13% 8%;
 
-    --ring: 240 4.9% 83.9%;
+    --ring: 220 4.9% 83.9%;
   }
 }
 
@@ -225,6 +225,6 @@ code[data-theme*=" "], code[data-theme*=" "] span {
   }
 
   code:not(span code):not(pre code){
-    @apply p-1 bg-sidebar rounded-md font-mono text-[13px];    
+    @apply p-1 bg-component rounded-md font-mono text-[13px];    
   }
 }
