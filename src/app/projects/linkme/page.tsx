@@ -6,7 +6,7 @@ import { ArrowLeftCircle } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="w-full pb-24 flex flex-col max-w-3xl p-6 gap-4 md:pt-8 md:px-8 md:pb-24 md:gap-6 lg:gap-8 lg:pt-16 lg:px-16 lg:pb-24 self-center">
+    <>
 
       <Button asChild size="default" variant="outline" className="w-fit">
         <Link href="/projects" className="flex flex gap-2">
@@ -37,28 +37,28 @@ export default function Home() {
         <p> We interviewed 15 customers to learn about the expectations and ideas for improvement they had about our product. We also asked customers to walk us through how they complete their management tasks and their daily frustrations. </p>
         <div className="flex flex-col gap-8 mb-4">
           <div className="flex flex-row gap-8">
-            <img className="w-24 h-24 md:w-40 md:h-40 rounded-full" src="../projects/linkme/Illustration1.svg" alt="" />
+            <img className="w-24 h-24 sm:w-40 sm:h-40 rounded-full" src="../projects/linkme/Illustration1.svg" alt="" />
             <div className="content-center">
               <h3> "I can't give access to my employees." </h3>
               <p> The business owner did not feel protected inviting SolarPanels to his company account because they would see all its balance, sales, and withdrawal money. </p>
             </div>
           </div>
           <div className="flex flex-row gap-8">
-            <img className="w-24 h-24 md:w-40 md:h-40 rounded-full" src="../projects/linkme/Illustration2.svg" alt="" />
+            <img className="w-24 h-24 sm:w-40 sm:h-40 rounded-full" src="../projects/linkme/Illustration2.svg" alt="" />
             <div className="content-center">
               <h3> "I can't manage solely on my phone." </h3>
               <p> Customers needed a consolidated view and flow to manage the spreadsheets from custom tools on their computers besides Link.me. </p>
             </div>
           </div>
           <div className="flex flex-row gap-8">
-            <img className="w-24 h-24 md:w-40 md:h-40 rounded-full" src="../projects/linkme/Illustration3.svg" alt="" />
+            <img className="w-24 h-24 sm:w-40 sm:h-40 rounded-full" src="../projects/linkme/Illustration3.svg" alt="" />
             <div className="content-center">
               <h3> "I don't know how much I paid" </h3>
               <p> Customers expressed that executing payment conciliation at the end of the month was extremely hard considering Link.me didn't provide expense reports. </p>
             </div>
           </div>
           <div className="flex flex-row gap-8">
-            <img className="w-24 h-24 md:w-40 md:h-40 rounded-full" src="../projects/linkme/Illustration4.svg" alt="" />
+            <img className="w-24 h-24 sm:w-40 sm:h-40 rounded-full" src="../projects/linkme/Illustration4.svg" alt="" />
             <div className="content-center">
               <h3> "I need a faster cash flow." </h3>
               <p> Link.me only offered two anticipation models, 30 days and 15 days. Still, it wasn't fast enough to ensure cash flow for some kinds of businesses. </p>
@@ -109,6 +109,6 @@ export default function Home() {
           </Card>
         </div>
       </article>
-    </div>
+    </>
   );
 }

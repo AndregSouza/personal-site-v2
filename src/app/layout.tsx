@@ -66,12 +66,14 @@ f="XMLHttpRequest",g._w={},g._w[f]=m[f],g._w[s]=m[s],m[s]&&(m[s]=function(){retu
 }(window,document,window._fs_namespace,"script",window._fs_script);`}
       </Script>
 
-      <body className={`${Sohne.variable} ${Plantijn.variable} ${"flex bg-background md:bg-sidebar flex-col md:flex-row"}`}>
+      <body className={`${Sohne.variable} ${Plantijn.variable} ${"flex bg-background sm:bg-sidebar flex-col sm:flex-row"}`}>
         <SpeedInsights />
         <Analytics />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <main className="h-full m-0 flex flex-col w-full bg-background m-0 md:m-2 md:h-[calc(100svh_-_1rem)] sm:rounded-lg overflow-auto shadow-md">
-            {children}
+          <main className="min-h-svh m-0 flex flex-col w-full bg-background m-0 sm:m-2 sm:h-[calc(100svh_-_1rem)] sm:rounded-lg overflow-auto shadow-md">
+            <div className="w-full pb-24 flex flex-col max-w-3xl p-6 gap-4 sm:gap-8 sm:pt-16 sm:px-12 sm:pb-24 self-center">
+              {children}
+            </div>
           </main>
           <Dock></Dock>
         </ThemeProvider>

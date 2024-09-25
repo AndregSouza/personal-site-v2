@@ -4,7 +4,7 @@ import { ArrowLeftCircle } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="w-full pb-24 flex flex-col max-w-3xl p-6 gap-4 md:pt-8 md:px-8 md:pb-24 md:gap-6 lg:gap-8 lg:pt-16 lg:px-16 lg:pb-24 self-center">
+    <>
 
       <Button asChild size="default" variant="outline" className="w-fit">
         <Link href="/projects" className="flex flex gap-2">
@@ -30,28 +30,28 @@ export default function Home() {
         <p> It was a great opportunity because we could get the perspectives from both sides and grasp the frustrations they face. Some of the early insights are shared below. </p>
         <div className="flex flex-col gap-8 mb-4">
           <div className="flex flex-row gap-8">
-            <img className="w-24 h-24 md:w-40 md:h-40 border-none" src="../projects/lumini/Ilustration-1.svg" alt="" />
+            <img className="w-24 h-24 sm:w-40 sm:h-40 border-none" src="../projects/lumini/Ilustration-1.svg" alt="" />
             <div className="content-center">
               <h3>“I like way too many things”</h3>
               <p>Students were frustrated when they enjoyed too many activities but couldn't find a way to narrow down their options from a list of occupations. </p>
             </div>
           </div>
           <div className="flex flex-row gap-8">
-            <img className="w-24 h-24 md:w-40 md:h-40 border-none" src="../projects/lumini/Ilustration-2.svg" alt="" />
+            <img className="w-24 h-24 sm:w-40 sm:h-40 border-none" src="../projects/lumini/Ilustration-2.svg" alt="" />
             <div className="content-center">
               <h3>“I’ve done some career quizzes”</h3>
               <p>Students felt lost when they searched online for solutions and found only superficial information.</p>
             </div>
           </div>
           <div className="flex flex-row gap-8">
-            <img className="w-24 h-24 md:w-40 md:h-40 border-none" src="../projects/lumini/Ilustration-3.svg" alt="" />
+            <img className="w-24 h-24 sm:w-40 sm:h-40 border-none" src="../projects/lumini/Ilustration-3.svg" alt="" />
             <div className="content-center">
               <h3> “I’ve never set foot in a college”</h3>
               <p>Often, high school students never had the opportunity to visit a university, making it even harder to envision their future lives.</p>
             </div>
           </div>
           <div className="flex flex-row gap-8">
-            <img className="w-24 h-24 md:w-40 md:h-40 border-none" src="../projects/lumini/Ilustration-4.svg" alt="" />
+            <img className="w-24 h-24 sm:w-40 sm:h-40 border-none" src="../projects/lumini/Ilustration-4.svg" alt="" />
             <div className="content-center">
               <h3>“I am sure about my choice”</h3>
               <p>Students that were confident about their decisions had already talked to workers from their desired occupation.</p>
@@ -79,6 +79,6 @@ export default function Home() {
         <h3>Ending the journey</h3>
         <p>Lastly, we help students find their desired occupation no matter how many times they want to iterate on the journey. Then, when satisfied with the results, we ask for feedback to improve our journey and illuminate more students.</p>
       </article>
-    </div >
+    </>
   );
 }

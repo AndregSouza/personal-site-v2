@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Photos() {
   return (
-    <div className="w-full pb-24 flex flex-col max-w-3xl p-6 gap-4 md:pt-8 md:px-8 md:pb-24 md:gap-6 lg:gap-8 lg:pt-16 lg:px-16 lg:pb-24 self-center">
+    <>
       <h1> Photos </h1>
       <section className="flex flex-1 flex-col gap-4">
         <div className="flex flex-1 flex-row justify-between">
@@ -141,6 +141,6 @@ export default function Photos() {
           <Image src="/photography/toronto/landscape/DSCF0483.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
         </div>
       </section>
-    </div>
+    </>
   )
 }

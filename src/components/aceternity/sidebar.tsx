@@ -85,10 +85,10 @@ export const DesktopSidebar = ({
   const { open, setOpen, animate } = useSidebar();
   return (
     <>
-      <aside className="hidden md:block h-svh min-w-72 bg-sidebar">
+      <aside className="hidden sm:block h-svh min-w-72 bg-sidebar">
         <motion.div
           className={cn(
-            "h-svh pl-4 pr-2 hidden md:flex md:gap-4 md:flex-col bg-sidebar flex-shrink-0",
+            "h-svh pl-4 pr-2 hidden sm:flex sm:gap-4 sm:flex-col bg-sidebar flex-shrink-0",
 
             className
           )}
@@ -117,7 +117,7 @@ export const MobileSidebar = ({
     <>
       <div
         className={cn(
-          "px-4 py-2 z-[100] h-auto flex flex-row md:hidden items-center justify-between bg-sidebar w-full"
+          "px-4 py-2 z-[100] h-auto flex flex-row sm:hidden items-center justify-between bg-sidebar w-full"
         )}
         {...props}
       >
