@@ -65,9 +65,9 @@ export default function Dock() {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1.3, duration: 0.3, ease: "easeOut" }}
-            className="fixed bottom-6 left-6 right-6 overflow-x-auto sm:overflow-visible rounded-2xl max-w-fit bg-component border mx-auto shadow-[_0_1px_1px_-0.5px_rgba(0,0,0,0.04),_0_3px_3px_-1.5px_rgba(0,0,0,0.04),_0_12px_12px_-6px_rgba(0,0,0,0.04)]"
+            className="fixed bottom-6 z-10 left-6 right-6 overflow-x-auto sm:overflow-visible rounded-2xl max-w-fit bg-component border mx-auto shadow-[_0_1px_1px_-0.5px_rgba(0,0,0,0.04),_0_3px_3px_-1.5px_rgba(0,0,0,0.04),_0_12px_12px_-6px_rgba(0,0,0,0.04)]"
         >
-            <motion.div className="flex w-fit left-0 right-0 z-10 flex h-[3.5rem] items-center gap-2 px-2 py-2">
+            <motion.div className="w-fit flex h-[3.5rem] items-center gap-2 px-2 py-2">
                 <AppIcon
                     href="/"
                     ariaLabel="Home"
@@ -156,27 +156,28 @@ function AppIcon({ href, ariaLabel, isActive, FilledIcon, OutlinedIcon, onClick 
                             }`}
                         onClick={onClick}
                     >
-                        <Icon className="h-5 w-5" />
+                        <Icon className="h-5 w-5 shrink-0" />
 
-                        <AnimatePresence>
+                        <AnimatePresence initial={false}>
                             {isActive && (
                                 <motion.span
                                     key="label"
-                                    initial={{ opacity: 0, width: 0, marginLeft: 4 }}
-                                    animate={{
-                                        opacity: 1, width: 'auto', marginLeft: 4,
+                                    initial={{
+                                        opacity: 0, width: 0, marginLeft: 4
                                     }}
+                                    animate={{opacity: 1, width: 'auto', marginLeft: 4,}}
+                                    transition={{ type: "spring", duration: 0.6, bounce: 0 }}
                                     exit={{
                                         opacity: 0,
                                         width: 0,
                                         marginLeft: 0,
                                         transition: {
                                             opacity: { duration: 0.2 },
-                                            marginLeft: { delay: 0.2, duration: 0.1 },
-                                            width: { duration: 0.3 }
+                                            marginLeft: { delay: 0.2, duration: 0.2 },
+                                            width: { type: "spring", duration: 0.6, bounce: 0 }
                                         }
                                     }}
-                                    transition={{ duration: 0.3 }}
+
 
                                     className="text-sm font-medium whitespace-nowrap overflow-hidden text-accent-foreground leading-snug"
                                 >
