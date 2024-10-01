@@ -160,9 +160,6 @@ function AppIcon({ href, ariaLabel, isActive, FilledIcon, OutlinedIcon, onClick 
                                     initial={{ opacity: 0, width: 0, marginLeft: 4 }}
                                     animate={{
                                         opacity: 1, width: 'auto', marginLeft: 4,
-                                        transition: {
-                                            type: "spring", duration: 0.3, bounce: 0.1
-                                        }
                                     }}
                                     exit={{
                                         opacity: 0,

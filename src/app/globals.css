@@ -6,6 +6,27 @@ body.no-scroll {
   overflow: hidden;
 }
 
+
+.orchestration{
+  --delay:120ms;
+}
+
+.orchestration > * {
+  animation: enter 0.6s ease both;
+  animation-delay: calc(var(--delay) * var(--stagger))
+}
+
+@keyframes enter{
+  from {
+    opacity:0;
+    transform:translateY(10px);
+  }
+  to {
+    opacity:1;
+    transform:translateY(0px);
+  }
+}
+
 @media (hover: none) {
   .audio-toggle-button {
       display: none;
