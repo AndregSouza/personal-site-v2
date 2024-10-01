@@ -1,15 +1,36 @@
+'use client';
 import { Card, CardVideo, CardImage, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator";
 import { LinkPreview } from "@/components/aceternity/link-preview";
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [isFirstVisit, setIsFirstVisit] = useState(false);
+
+  useEffect(() => {
+    // Open the cache storage
+    const checkCache = async () => {
+      const cache = await caches.open('visit-cache');
+      const response = await cache.match('hasVisited');
+
+      // If no cache entry exists, it's the user's first visit
+      if (!response) {
+        const newResponse = new Response('true');
+        await cache.put('hasVisited', newResponse);
+        setIsFirstVisit(true);
+      }
+    };
+
+    checkCache();
+  }, []);
+  
 
   return (
     <>
-      <div className="flex flex-col gap-4 sm:gap-8 orchestration">
+      <div className={`flex flex-col gap-4 sm:gap-8 ${isFirstVisit ? 'orchestration' : ''}`}>
         <section className="flex flex-1 flex-col gap-4" style={{ "--stagger": 1 } as React.CSSProperties}>
           <Avatar>
             <AvatarImage src="/profilePicture.png" alt="Profile Picture" />
