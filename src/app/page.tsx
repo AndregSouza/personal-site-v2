@@ -4,17 +4,8 @@ import Link from "next/link"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator";
 import { LinkPreview } from "@/components/aceternity/link-preview";
-import { headers } from 'next/headers';
 
 export default function Home() {
-  
-  const headersList = headers();
-  const referer = headersList.get('referer') || '';
-  const host = headersList.get('host') || '';
-  const shouldAnimate = !referer.includes(host);
-
-  console.log(headersList, referer, host, shouldAnimate);
-  
 
   return (
     <>

@@ -61,7 +61,12 @@ export default function Dock() {
     if (!mounted) return null;
 
     return (
-        <footer className="fixed bottom-6 left-6 right-6 overflow-x-auto sm:overflow-visible rounded-2xl max-w-fit bg-component border mx-auto shadow-[_0_1px_1px_-0.5px_rgba(0,0,0,0.04),_0_3px_3px_-1.5px_rgba(0,0,0,0.04),_0_12px_12px_-6px_rgba(0,0,0,0.04)]">
+        <motion.footer
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 1.3, duration: 0.3, ease: "easeOut" }}
+            className="fixed bottom-6 left-6 right-6 overflow-x-auto sm:overflow-visible rounded-2xl max-w-fit bg-component border mx-auto shadow-[_0_1px_1px_-0.5px_rgba(0,0,0,0.04),_0_3px_3px_-1.5px_rgba(0,0,0,0.04),_0_12px_12px_-6px_rgba(0,0,0,0.04)]"
+        >
             <motion.div className="flex w-fit left-0 right-0 z-10 flex h-[3.5rem] items-center gap-2 px-2 py-2">
                 <AppIcon
                     href="/"
@@ -123,7 +128,7 @@ export default function Dock() {
                     className="audio-toggle-button"
                 />
             </motion.div>
-        </footer>
+        </motion.footer>
     );
 }
 
