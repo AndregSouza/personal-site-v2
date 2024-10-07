@@ -222,10 +222,8 @@ code[data-theme*=" "], code[data-theme*=" "] span {
   }
 
   article img, article video {
-    @apply border rounded-lg my-4;
+    @apply border rounded-lg my-4 w-full max-w-4xl;
   }
-
-
 
   /* Code block */
 

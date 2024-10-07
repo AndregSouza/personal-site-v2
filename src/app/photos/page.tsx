@@ -1,146 +1,206 @@
+"use client"
+
+import React, { useState } from "react";
 import Image from "next/image";
+import * as Dialog from '@radix-ui/react-dialog';
+import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
+import { X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function Photos() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const allImages = [
+    // New York - Landscape
+
+    "/photography/newYork/landscape/DSCF1732.jpg",
+    "/photography/newYork/landscape/DSCF1433.jpg",
+    "/photography/newYork/landscape/DSCF1447.jpg",
+    "/photography/newYork/landscape/DSCF1450.jpg",
+    "/photography/newYork/landscape/DSCF1471.jpg",
+    "/photography/newYork/landscape/DSCF1472.jpg",
+    "/photography/newYork/landscape/DSCF1490.jpg",
+    "/photography/newYork/landscape/DSCF1502.jpg",
+    "/photography/newYork/landscape/DSCF1507.jpg",
+    "/photography/newYork/landscape/DSCF1512.jpg",
+    "/photography/newYork/landscape/DSCF1517.jpg",
+    "/photography/newYork/landscape/DSCF1522.jpg",
+    "/photography/newYork/landscape/DSCF1550.jpg",
+    "/photography/newYork/landscape/DSCF1558.jpg",
+    "/photography/newYork/landscape/DSCF1568.jpg",
+    "/photography/newYork/landscape/DSCF1570.jpg",
+    "/photography/newYork/landscape/DSCF1593.jpg",
+    "/photography/newYork/landscape/DSCF1604.jpg",
+    "/photography/newYork/landscape/DSCF1614.jpg",
+    "/photography/newYork/landscape/DSCF1617.jpg",
+    "/photography/newYork/landscape/DSCF1646.jpg",
+    "/photography/newYork/landscape/DSCF1653.jpg",
+    "/photography/newYork/landscape/DSCF1659.jpg",
+    "/photography/newYork/landscape/DSCF1697.jpg",
+    "/photography/newYork/landscape/DSCF1727.jpg",
+    "/photography/newYork/landscape/DSCF1774.jpg",
+    "/photography/newYork/landscape/DSCF1806.jpg",
+
+
+    // New York - Portrait
+    "/photography/newYork/portrait/DSCF1582.jpg",
+    "/photography/newYork/portrait/DSCF1585.jpg",
+    "/photography/newYork/portrait/DSCF1597.jpg",
+    "/photography/newYork/portrait/DSCF1603.jpg",
+    "/photography/newYork/portrait/DSCF1621.jpg",
+    "/photography/newYork/portrait/DSCF1649.jpg",
+    "/photography/newYork/portrait/DSCF1667.jpg",
+    "/photography/newYork/portrait/DSCF1709.jpg",
+    "/photography/newYork/portrait/DSCF1728.jpg",
+    "/photography/newYork/portrait/DSCF1816.jpg",
+    "/photography/newYork/portrait/DSCF1817.jpg",
+    "/photography/newYork/portrait/DSCF1870.jpg",
+    "/photography/newYork/portrait/DSCF1439.jpg",
+    "/photography/newYork/portrait/DSCF1452.jpg",
+    "/photography/newYork/portrait/DSCF1458.jpg",
+    "/photography/newYork/portrait/DSCF1465.jpg",
+    "/photography/newYork/portrait/DSCF1481.jpg",
+    "/photography/newYork/portrait/DSCF1494.jpg",
+    "/photography/newYork/portrait/DSCF1536.jpg",
+    "/photography/newYork/portrait/DSCF1539.jpg",
+    "/photography/newYork/portrait/DSCF1552.jpg",
+    "/photography/newYork/portrait/IMG_0040.jpg",
+    "/photography/newYork/portrait/IMG_0062.jpg",
+    "/photography/newYork/portrait/IMG_0069.jpg",
+    "/photography/newYork/portrait/IMG_0076.jpg",
+    "/photography/newYork/portrait/IMG_0084.jpg",
+    "/photography/newYork/portrait/IMG_0090.jpg",
+    "/photography/newYork/portrait/IMG_0093.jpg",
+    "/photography/newYork/portrait/IMG_0097.jpg",
+    "/photography/newYork/portrait/IMG_0099.jpg",
+    "/photography/newYork/portrait/IMG_0120.jpg",
+    "/photography/newYork/portrait/IMG_0161.jpg",
+    "/photography/newYork/portrait/IMG_0169.jpg",
+
+
+    // Toronto - Landscape
+    "/photography/toronto/landscape/DSCF0022.jpg",
+    "/photography/toronto/landscape/DSCF0029.jpg",
+    "/photography/toronto/landscape/DSCF0037.jpg",
+    "/photography/toronto/landscape/DSCF0041.jpg",
+    "/photography/toronto/landscape/DSCF0063.jpg",
+    "/photography/toronto/landscape/DSCF0072.jpg",
+    "/photography/toronto/landscape/DSCF0074.jpg",
+    "/photography/toronto/landscape/DSCF0099.jpg",
+    "/photography/toronto/landscape/DSCF0111.jpg",
+    "/photography/toronto/landscape/DSCF0113.jpg",
+    "/photography/toronto/landscape/DSCF0118.jpg",
+    "/photography/toronto/landscape/DSCF0127.jpg",
+    "/photography/toronto/landscape/DSCF0130.jpg",
+    "/photography/toronto/landscape/DSCF0138.jpg",
+    "/photography/toronto/landscape/DSCF0144.jpg",
+    "/photography/toronto/landscape/DSCF0147.jpg",
+    "/photography/toronto/landscape/DSCF0180.jpg",
+    "/photography/toronto/landscape/DSCF0223.jpg",
+    "/photography/toronto/landscape/DSCF0224.jpg",
+    "/photography/toronto/landscape/DSCF0267.jpg",
+    "/photography/toronto/landscape/DSCF0268.jpg",
+    "/photography/toronto/landscape/DSCF0271.jpg",
+    "/photography/toronto/landscape/DSCF0274.jpg",
+    "/photography/toronto/landscape/DSCF0275.jpg",
+    "/photography/toronto/landscape/DSCF0307.jpg",
+    "/photography/toronto/landscape/DSCF0310.jpg",
+    "/photography/toronto/landscape/DSCF0400.jpg",
+    "/photography/toronto/landscape/DSCF0414.jpg",
+    "/photography/toronto/landscape/DSCF0417.jpg",
+    "/photography/toronto/landscape/DSCF0435.jpg",
+    "/photography/toronto/landscape/DSCF0437.jpg",
+    "/photography/toronto/landscape/DSCF0439.jpg",
+    "/photography/toronto/landscape/DSCF0442.jpg",
+    "/photography/toronto/landscape/DSCF0447.jpg",
+    "/photography/toronto/landscape/DSCF0448.jpg",
+    "/photography/toronto/landscape/DSCF0457.jpg",
+    "/photography/toronto/landscape/DSCF0460.jpg",
+    "/photography/toronto/landscape/DSCF0478.jpg",
+    "/photography/toronto/landscape/DSCF0483.jpg",
+
+
+    // Toronto - Portrait
+    "/photography/toronto/portrait/DSCF0096.jpg",
+    "/photography/toronto/portrait/DSCF0069.jpg",
+    "/photography/toronto/portrait/DSCF0087.jpg",
+    "/photography/toronto/portrait/IMG_3599.jpg",
+    "/photography/toronto/portrait/IMG_3184.jpg",
+    "/photography/toronto/portrait/IMG_3185.jpg",
+    "/photography/toronto/portrait/IMG_3187.jpg",
+    "/photography/toronto/portrait/IMG_3192.jpg",
+    "/photography/toronto/portrait/IMG_3219.jpg",
+    "/photography/toronto/portrait/IMG_3249.jpg",
+    "/photography/toronto/portrait/IMG_3267.jpg",
+    "/photography/toronto/portrait/IMG_3273.jpg"
+  ];
+
+  const openModal = (index: number) => {
+    setCurrentImageIndex(index);
+    setModalOpen(true);
+  };
+
   return (
-    <>
-      <h1> Photos </h1>
-      <section className="flex flex-1 flex-col gap-4">
-        <div className="flex flex-1 flex-row justify-between">
-          <h2> New York </h2>
-          <p className="tabular text-muted-foreground"> 2024 </p>
-        </div>
+    <div className="w-full pb-24 flex flex-col max-w-3xl p-6 gap-4 sm:gap-8 sm:pt-16 sm:px-12 sm:pb-24 self-center">
+      <h1>Photos</h1>
 
-        <div className="relative w-full h-96">
-          <Image alt="Mountains" src="/photography/newYork/landscape/DSCF1732.jpg" quality={100} fill sizes="100vw" className="rounded-sm object-cover" />
-        </div>
-        <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 space-y-4">
-          <Image priority src="/photography/newYork/portrait/DSCF1582.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image priority src="/photography/newYork/portrait/DSCF1585.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image priority src="/photography/newYork/portrait/DSCF1597.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image priority src="/photography/newYork/portrait/DSCF1603.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image priority src="/photography/newYork/portrait/DSCF1621.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image priority src="/photography/newYork/portrait/DSCF1649.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image priority src="/photography/newYork/portrait/DSCF1667.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/DSCF1709.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/DSCF1728.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/DSCF1816.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/DSCF1817.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/DSCF1870.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/DSCF1439.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/DSCF1452.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/DSCF1458.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/DSCF1465.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/DSCF1481.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/DSCF1494.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/DSCF1536.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/DSCF1539.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/DSCF1552.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/IMG_0040.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/IMG_0062.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/IMG_0069.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/IMG_0076.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/IMG_0084.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/IMG_0090.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/IMG_0093.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/IMG_0097.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/IMG_0099.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/IMG_0120.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/IMG_0161.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/portrait/IMG_0169.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-        </div>
-        <div className="columns-1 gap-4 lg:columns-2 space-y-4">
-          <Image src="/photography/newYork/landscape/DSCF1433.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1447.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1450.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1471.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1472.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1490.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1502.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1507.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1512.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1517.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1522.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1550.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1558.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1568.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1570.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1593.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1604.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1614.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1617.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1646.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1653.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1659.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1697.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1727.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1774.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/newYork/landscape/DSCF1806.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-        </div>
-      </section>
-      <section className="flex flex-1 flex-col gap-4">
-        <div className="flex flex-1 flex-row justify-between">
-          <h2> Toronto </h2>
-          <p className="tabular text-muted-foreground"> 2022 </p>
-        </div>
+      <section className="grid grid-rows grid-cols-3 gap-4">
+        <Dialog.Root open={modalOpen} onOpenChange={setModalOpen}>
+          {allImages.map((src, index) => (
+            <Dialog.Trigger asChild key={index}>
+              <Image
+                priority
+                src={src}
+                width={700}
+                height={475}
+                sizes="100vw"
+                alt={`Image ${index + 1}`}
+                className="rounded-sm object-cover cursor-pointer"
+                onClick={() => openModal(index)}
+              />
+            </Dialog.Trigger>
+          ))}
+          <Dialog.Portal>
+            <Dialog.Overlay className="z-10 fixed inset-0 bg-background backdrop-blur-sm" />
+            <Dialog.Content className="z-10 fixed left-[50%] top-[50%] max-h-[95vh] w-[95vw] max-w-6xl translate-x-[-50%] translate-y-[-50%] rounded-md p-6">
+              <Carousel className="rounded-xl overflow-clip bg-background" opts={{ startIndex: currentImageIndex, loop: true }}>
+                <CarouselContent className="max-h-fit">
+                  {allImages.map((src, index) => (
+                    <CarouselItem className="max-h-[80vh] max-w-fit" key={index}>
+                        <Image
+                          src={src}
+                          alt={`Carousel Image ${index + 1}`}
+                          width={2400}
+                          height={1605}
+                          sizes="100vw"
+                          className="rounded-sm object-cover rounded-xl w-fit h-full max-h-[81vh]"
+                        />
+                        <VisuallyHidden.Root><Dialog.Title /></VisuallyHidden.Root>
+                        <VisuallyHidden.Root><Dialog.Description /></VisuallyHidden.Root>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+                <Dialog.Close asChild>
+                  <Button size="icon" variant="outline" className='absolute top-4 right-4 z-50 rounded-full'>
+                    <X className='h-5 w-5' />
+                  </Button>
+                </Dialog.Close>
+              </Carousel>
 
-        <div className="relative w-full h-96">
-          <Image src="/photography/toronto/landscape/DSCF0022.jpg" quality={100} fill sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-        </div>
-        <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 space-y-4">
-          <Image src="/photography/toronto/portrait/DSCF0096.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/portrait/DSCF0069.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/portrait/DSCF0087.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/portrait/IMG_3599.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/portrait/IMG_3184.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/portrait/IMG_3185.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/portrait/IMG_3187.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/portrait/IMG_3192.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/portrait/IMG_3219.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/portrait/IMG_3249.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/portrait/IMG_3267.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/portrait/IMG_3273.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-        </div>
-        <div className="columns-1 gap-4 lg:columns-2 space-y-4">
-          <Image src="/photography/toronto/landscape/DSCF0029.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0037.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0041.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0063.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0072.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0074.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0099.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0111.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0113.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0118.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0127.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0130.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0138.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0144.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0147.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0180.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0223.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0224.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0267.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0268.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0271.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0274.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0275.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0307.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0310.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0400.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0414.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0417.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0435.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0437.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0439.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0442.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0447.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0448.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0457.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0460.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0478.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-          <Image src="/photography/toronto/landscape/DSCF0483.jpg" width={700} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover" />
-        </div>
+            </Dialog.Content>
+          </Dialog.Portal>
+        </Dialog.Root>
       </section>
-    </>
-  )
+    </div>
+  );
 }

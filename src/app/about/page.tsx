@@ -5,7 +5,7 @@ import { Code } from "@/components/code";
 
 export default function About() {
   return (
-    <>
+    <div className="w-full pb-24 flex flex-col max-w-3xl p-6 gap-4 sm:gap-8 sm:pt-16 sm:px-12 sm:pb-24 self-center">
       <h1> About </h1>
       <section className="flex flex-1 flex-col">
         <Image priority src="/DSCF1691.png" width={1200} height={475} sizes="100vw" alt="Image" className="rounded-sm object-cover mb-6" />
@@ -214,6 +214,6 @@ export default function About() {
           a mix of libraries such as Radix, Aceternity, Framer Motion & more.
         </p>
       </section>
-    </>
+    </div>
   );
 }
